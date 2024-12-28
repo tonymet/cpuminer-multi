@@ -1,0 +1,16 @@
+name: My Workflow
+on:
+  push:
+    branches: 'linux'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: prereqs
+        uses: ConorMacBride/install-package@v1
+        with:
+          apt:  gcc automake autoconf zlib1g-dev  libcurl4-openssl-dev libcurl4 libssl3 make git
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: build
+        run: ./build.sh
