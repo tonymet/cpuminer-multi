@@ -9,8 +9,10 @@ jobs:
       - name: prereqs
         uses: ConorMacBride/install-package@v1
         with:
-          apt:  gcc automake autoconf zlib1g-dev  libcurl4-openssl-dev libcurl4 libssl3 make git
+          apt:  gcc automake autoconf zlib1g-dev  libcurl4-openssl-dev libcurl4 libssl3 make git autoconf-archive
       - name: Checkout code
         uses: actions/checkout@v4
       - name: build
         run: ./build.sh
+      - name: test
+        run: ./cpuminer --cputest
