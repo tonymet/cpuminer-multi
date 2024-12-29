@@ -16,3 +16,10 @@ jobs:
         run: ./build.sh
       - name: test
         run: ./cpuminer --cputest
+      - name: artifact
+        run: tar -zcf release.tgz cpuminer
+      - name: github-release
+        uses: ncipollo/release-action@v1
+        with: 
+          artifacts: release.tgz
+
