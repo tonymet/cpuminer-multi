@@ -15,6 +15,8 @@ bin_PROGRAMS	= cpuminer
 
 dist_man_MANS	= cpuminer.1
 
+cpuminerdir = $(top_srcdir)
+
 cpuminer_SOURCES = \
   cpu-miner.c util.c \
   api.c sysinfos.c \

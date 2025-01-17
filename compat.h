@@ -100,4 +100,9 @@ static __inline char * dirname(char *file) {
 #define MAX_PATH PATH_MAX
 #endif
 
+
+asm (".symver  __isoc23_strtoll, __isoc23_strtoll@GLIBC_2.33");
+asm (".symver  __isoc23_strtoul, __isoc23_strtoul@GLIBC_2.33");
+asm (".symver  __isoc23_strtol, __isoc23_strtol@GLIBC_2.33");
+
 #endif /* __COMPAT_H__ */
